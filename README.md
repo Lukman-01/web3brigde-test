@@ -47,15 +47,22 @@ const options = {
 const password = generatePassword(options);
 console.log(`Generated Password: ${password}`);
 ```
+## Testing Explanation
 
-### Running the Tests
+This project utilizes Jest to run a suite of automated tests to ensure the password generator functions as expected under various configurations. The tests are designed to validate several key aspects of the password generation process:
 
-To run the tests, execute:
+- **Password Length**: Tests that the password generated matches the requested length.
+- **Inclusion of Numbers**: Verifies that the generated password includes numbers when the option is set to true.
+- **Inclusion of Symbols**: Checks that the password contains symbols if enabled.
+- **Character Exclusivity**: Ensures the password contains only the specified types of characters (e.g., no numbers or symbols when these options are set to false).
+- **Zero Length Password**: Confirms that the function returns an empty string when a zero length is requested.
+
+### How to Run Tests
+
+To execute the tests, follow these steps in your terminal after you have installed the project dependencies:
 
 ```bash
 npm test
 ```
 
-This command will run the test suite defined in `passwordGenerator.test.ts`, ensuring that the password generation meets all specified criteria.
-
- 
+This will invoke the Jest testing framework to run the test cases specified in `passwordGenerator.test.ts`. The results will show whether each test has passed or failed, allowing you to verify the functionality of the password generator script.
